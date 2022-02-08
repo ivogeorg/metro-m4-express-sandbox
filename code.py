@@ -39,15 +39,15 @@ for p in [board.D2, board.D3, board.D4]:
 
 # Servo on D5
 # create a PWMOut object on Pin D5
-#pwm = pulseio.PWMOut(board.D5, duty_cycle=2 ** 15, frequency=50)
-#servo = servo.Servo(pwm)
+pwm = pulseio.PWMOut(board.D5, duty_cycle=2 ** 15, frequency=50)
+servo = servo.Servo(pwm)
 
 # NeoPixel strip (of 16 LEDs) connected on D6
 NUMPIXELS = 16
 neopixels = neopixel.NeoPixel(board.D6, NUMPIXELS, brightness=0.2, auto_write=False)
 
 # Used if we do HID output, see below
-#kbd = Keyboard()
+kbd = Keyboard()
 
 ######################### HELPERS ##############################
 
