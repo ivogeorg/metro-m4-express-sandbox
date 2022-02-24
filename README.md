@@ -1,6 +1,6 @@
 # Adafruit Metro M4 Express
 
-Sandbox for playing with the [Adafruit Metro M4 Express](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51) board.
+Sandbox for playing with the [Adafruit Metro M4 Express](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51) (also in [PDF](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-metro-m4-express-featuring-atsamd51.pdf)) board.
 
 ## Getting started
 
