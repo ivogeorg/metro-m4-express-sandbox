@@ -27,8 +27,10 @@ In an infinite loop:
 
 ## The board
 
-1. [ATSAMD51](https://www.microchip.com/en-us/product/ATSAMD51G19A#).
-2. [I/O](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/pinouts):
+1. Hardware:
+   1. [ATSAMD51](https://www.microchip.com/en-us/product/ATSAMD51G19A#).
+   2. Files: [Adafruit](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/downloads), [Github](https://github.com/adafruit/Adafruit-Metro-M4-Express-PCB).
+3. [I/O](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/pinouts):
    1. Power.  
    2. Digital (PWM).  
    3. Analog.  
@@ -39,7 +41,7 @@ In an infinite loop:
    8. Parallel capture (PCC) ("camera").  
    9. SWD (debug port).  
    10. QSPI Flash (internal).
-3. Programming:
+4. Programming:
    1. [CircuitPython](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/circuitpython).  
    2. [Arduino](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/setup).  
 
