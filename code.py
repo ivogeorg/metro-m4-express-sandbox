@@ -37,17 +37,19 @@ for p in [board.D2, board.D3, board.D4]:
     button.pull = Pull.UP
     buttons.append(button)
 
+# TODO
 # Servo on D5
 # create a PWMOut object on Pin D5
-pwm = pulseio.PWMOut(board.D5, duty_cycle=2 ** 15, frequency=50)
-servo = servo.Servo(pwm)
+#pwm = pulseio.PWMOut(board.D5, duty_cycle=2 ** 15, frequency=50)
+#servo = servo.Servo(pwm)
 
 # NeoPixel strip (of 16 LEDs) connected on D6
 NUMPIXELS = 16
 neopixels = neopixel.NeoPixel(board.D6, NUMPIXELS, brightness=0.2, auto_write=False)
 
+# TODO
 # Used if we do HID output, see below
-kbd = Keyboard()
+#kbd = Keyboard()
 
 ######################### HELPERS ##############################
 
@@ -103,6 +105,7 @@ while True:
   if not buttons[0].value:
       print("Button D2 pressed!", end ="\t")
       # optional! uncomment below & save to have it sent a keypress
+      # TODO
       #kbd.press(Keycode.A)
       #kbd.release_all()
 
@@ -114,6 +117,7 @@ while True:
       print("Button D4 pressed!", end ="\t")
       play_file(audiofiles[1])
 
+  # TODO
   # sweep a servo from 0-180 degrees (map from 0-255)
   servo.angle = simpleio.map_range(i, 0, 255, 0, 180)
 
