@@ -6,7 +6,7 @@ Sandbox for playing with the [Adafruit Metro M4 Express](https://learn.adafruit.
 
 1. Update bootloader.  
 2. Update CircuitPython.  
-3. Update CircuitPython libraries used in `code.py`.  
+3. Update CircuitPython [libraries](https://circuitpython.org/libraries) ([optimized](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20220303/adafruit-circuitpython-bundle-7.x-mpy-20220303.zip) and [sources](https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20220303/adafruit-circuitpython-bundle-py-20220303.zip)) used in `code.py`.  
 4. Edit `code.py` to bring it up to date with the libraries.  
 
 ## `code.py`
