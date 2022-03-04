@@ -36,7 +36,7 @@ buttons = []
 for p in [board.D2, board.D3, board.D4]:
     button = DigitalInOut(p)
     button.direction = Direction.INPUT
-    button.pull = Pull.UP                   # Connect to PB on NO
+    button.pull = Pull.UP                   # Connect to PB on NO (https://www.digikey.com/en/articles/how-to-implement-hardware-debounce-for-switches-and-relays)
     buttons.append(button)
 
 # TODO
