@@ -7,11 +7,13 @@ from digitalio import DigitalInOut, Direction, Pull
 from analogio import AnalogIn
 from adafruit_motor import servo
 import neopixel
+import audiocore   # For WaveFile (https://docs.circuitpython.org/en/latest/shared-bindings/audioio/index.html)
 import audioio
 import pulseio
 import simpleio
 
 # keyboard support
+import usb_hid  # for Keyboard(usb_hid.devices)
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
 
@@ -34,7 +36,7 @@ buttons = []
 for p in [board.D2, board.D3, board.D4]:
     button = DigitalInOut(p)
     button.direction = Direction.INPUT
-    button.pull = Pull.UP
+    button.pull = Pull.UP                   # Connect to PB on NO
     buttons.append(button)
 
 # TODO
@@ -47,9 +49,8 @@ for p in [board.D2, board.D3, board.D4]:
 NUMPIXELS = 16
 neopixels = neopixel.NeoPixel(board.D6, NUMPIXELS, brightness=0.2, auto_write=False)
 
-# TODO
 # Used if we do HID output, see below
-#kbd = Keyboard()
+kbd = Keyboard(usb_hid.devices)  # https://docs.circuitpython.org/projects/hid/en/latest/api.html?highlight=keyboard#adafruit_hid.keyboard.Keyboard
 
 ######################### HELPERS ##############################
 
@@ -74,12 +75,14 @@ def wheel(pos):
         pos -= 170
         return [0, int(pos*3), int(255 - pos*3)]
 
+# TODO: Inaudible on dev bd speaker
 def play_file(filename):
     print("")
     print("----------------------------------")
     print("playing file "+filename)
     with open(filename, "rb") as wave_file:
-        wave = audioio.WaveFile(wave_file)
+        wave = audiocore.WaveFile(wave_file)
+        audio.play(wave)
         audio.play(wave)
         while audio.playing:
             pass
@@ -105,9 +108,9 @@ while True:
   if not buttons[0].value:
       print("Button D2 pressed!", end ="\t")
       # optional! uncomment below & save to have it sent a keypress
-      # TODO
-      #kbd.press(Keycode.A)
-      #kbd.release_all()
+      # Note: It will send the key to the cursor!
+      kbd.press(Keycode.B)
+      kbd.release_all()
 
   if not buttons[1].value:
       print("Button D3 pressed!", end ="\t")
@@ -122,6 +125,6 @@ while True:
   servo.angle = simpleio.map_range(i, 0, 255, 0, 180)
 
   i = (i+1) % 256  # run from 0 to 255
-  #time.sleep(0.01) # make bigger to slow down
+  time.sleep(1) # make bigger to slow down
 
   print("")
