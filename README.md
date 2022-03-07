@@ -44,6 +44,7 @@ In an infinite loop:
 4. Programming:
    1. [CircuitPython](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/circuitpython).  
    2. [Arduino](https://learn.adafruit.com/adafruit-metro-m4-express-featuring-atsamd51/setup).  
+   3. Low-level [ARM](https://learn.sparkfun.com/tutorials/arm-programming/all) programming over SWD and [Segger J-Link Edu Mini](https://www.segger.com/products/debug-probes/j-link/models/j-link-edu-mini/).
 
 ## Curriculum & projects
 
