@@ -1,3 +1,5 @@
+
+
 # Metro M4 IO demo
 # Welcome to CircuitPython 3.1 :)
 
@@ -76,6 +78,7 @@ def wheel(pos):
         return [0, int(pos*3), int(255 - pos*3)]
 
 # TODO: Inaudible on dev bd speaker
+# https://learn.adafruit.com/circuitpython-essentials/circuitpython-audio-out
 def play_file(filename):
     print("")
     print("----------------------------------")
